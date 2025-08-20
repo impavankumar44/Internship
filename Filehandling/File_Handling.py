@@ -1,0 +1,7 @@
+f = open(r"C:\Users\itspa\Downloads\mylearningsgit\Info.txt","r")
+data = f.read()
+print(data)
+f.close()
+x = open(r"C:\Users\itspa\Downloads\mylearningsgit\Info.txt","a")
+x.write("I am working for a period of 3 weeks \n Today I have recieved my ID card.")
+x.close()
