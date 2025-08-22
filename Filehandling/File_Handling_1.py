@@ -1,5 +1,6 @@
+
 f = open("C:\\Mywork\\Filehandling\\File_Handling_dup1.txt","r")
-data = f.read()
+data = f.read(12)
 print(data)
 f.close()
 
