@@ -1,97 +1,135 @@
-print("Inheritance")
-print("Single Inheritance")
+print("Inheritance") # The output gives the string 'Inheritance'
+
+print("Single Inheritance") # The output gives the string 'Single Inheritance'
+
+
 class Cars:
-    Colour = "Colour : Black  "
-    Material = "Material : Steel"
+    colour = "Colour : Black  "
+    material = "Material : Steel"
 
 
 class Tata_car(Cars):
-    def __init__(self,Model,Performance):
-        self.Model = Model
-        self.Performance = Performance
-
-Tata_Nexon = Tata_car("Model : Nexon_45687","  Performance : Moderate to High")
-print(Tata_Nexon.Colour,Tata_Nexon.Model,Tata_Nexon.Performance)
+    def __init__(self,model,performance):
+        self.model = model
+        self.performance = performance
 
 
-print("Multi-Level Inheritance")
+tata_nexon = Tata_car("Model : Nexon_45687","  Performance : Moderate to High")
+print(tata_nexon.colour,tata_nexon.model,tata_nexon.performance)
+# The output gives the string 'Colour : Black ' , 'Model : Nexon_45687' and 'Performance : Moderate to High'
+
+
 class Music:
-    Music_Director = "Devi Sri Prasad"
-    Lyricist_1 = "Chandra Bose"
-    Lyricist_2 = "Anthantha Sriram"
-    Lyricist_3 = "Sirivennela Sitaramasastri"
+     music_director = "Devi Sri Prasad"
+     lyricist_1 = "Chandra Bose"
+     lyricist_2 = "Anthantha Sriram"
+     lyricist_3 = "Sirivennela Sitaramasastri"
 
-class Music_Academy(Music):
     
-        Singer_1 = "Hari Charan"
-        Singer_2 = "Sherya Goshal"
-        Musician_1 = "Shivamani"
-        Musician_2 = "Naveen Kumar" 
-class Song_1(Music_Academy):
-     Actor = "Morgan"
-     Actress = "Selina"
+class Music_academy(Music):
+        singer_1 = "Hari Charan"
+        singer_2 = "Sherya Goshal"
+        musician_1 = "Shivamani"
+        musician_2 = "Naveen Kumar" 
 
-Movie_song = Song_1
-print(Movie_song.Music_Director)
-print(Movie_song.Lyricist_3,Movie_song.Singer_2)
+        
+class Song_1(Music_academy):
+     actor = "Morgan"
+     actress = "Selina"
 
-print("Multiple Inheritance")
+
+movie_song = Song_1
+print(movie_song.music_director) # Gives the output 'Devi Sri Prasad'
+print(movie_song.lyricist_3,movie_song.singer_2) 
+# Gives the output 'Sirivennela Sitaramasastri' and 'Sherya Goshal'
+
+
+print("Multiple Inheritance") # The Output gives the string 'Multiple Inheritance'
+
+
 class Level_1:
-     Beverage_1 = "Black Coffee"
-     Steamed_Food_1 = "Idly Sambar"
-     Fried_Food = "Vada"
-     Curry = "Mutton Curry"
+     beverage_1 = "Black Coffee"
+     steamed_food_1 = "Idly Sambar"
+     fried_food = "Vada"
+     curry = "Mutton Curry"
+
+
 class Level_2:
-     Beverage_2 = "Mocha"
-     Steamed_Food_2 = "Momos"
-     Bread = "French Toast"
-     Egg = "Poached Egg"
-class Full_Breakfast(Level_1,Level_2):
-     Goated_breakfast = "Dosa"
-     Supreme = "Masala dosa"
-
-Customer_1 = Full_Breakfast()
-print(Customer_1.Beverage_1,Customer_1.Fried_Food,Customer_1.Curry,Customer_1.Egg,Customer_1.Goated_breakfast)
+     beverage_2 = "Mocha"
+     steamed_food_2 = "Momos"
+     bread = "French Toast"
+     egg = "Poached Egg"
 
 
-print("Super Method")
+class Full_breakfast(Level_1,Level_2):
+     goated_breakfast = "Dosa"
+     supreme = "Masala dosa"
+
+
+customer_1 = Full_breakfast()
+print(customer_1.beverage_1,customer_1.fried_food,
+      customer_1.curry,customer_1.egg,customer_1.goated_breakfast
+)
+#The Output gives the string 'Black Coffee' , 'Vada' , 'Mutton Curry' , 'Poached Egg' and 'Dosa'
+
+
+print("Super Method") # The Output gives the string 'Super Method'
+
+
 class Mathematics:
+
      def love(self):
-          print("We Love mathematics")
+          print("We Love mathematics") # Gives the output 'We Love mathematics'
+
+
 class Geometry(Mathematics):
+
      def love(self):
           super().love()
           print("we love geometry")
-        
-Ellipse = Geometry()
-print(Ellipse.love())
+          # The Output gives the string 'we love geometry' 
 
+        
+ellipse = Geometry()
+print(ellipse.love())
 
 
 class Maths:
-     def Geometry(self):
+     def geometry(self):
           print("Ellipse is an interesting concept")
+
+
 class Maths_1(Maths):
-     def Ellipse(self):
+
+     def ellipse(self):
           print("Ellipse is very good")
-          super().Geometry()
-Topic_1 = Maths_1()
-print(Topic_1.Ellipse())
+          super().geometry()
 
 
+topic_1 = Maths_1()
+print(topic_1.ellipse())
+# Returns the output 'Ellipse is very good'
+# Returns the output 'Ellipse is an interesting concept'
 
 
 # super method in __init__ function
 class Movies:
+
      def __init__(self,cast):
           self.cast = cast
           print(f"The main money returing cast is {self.cast}")
 
+
 class Baahubali(Movies):
+          
           def __init__(self,cast,gross):
                self.gross = gross
 
                super().__init__(cast)
                print(f"The movie has collected a gross of {gross}")
+
+
 reason = Baahubali("Rajamouli and Prabas","1200Cr")
 print(reason.cast,reason.gross)
+# The output returns the string 'The main money returing cast is Rajamouli and Prabas'
+# The output returns the string 'The movie has collected a gross of 1200Cr'

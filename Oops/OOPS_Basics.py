@@ -1,7 +1,10 @@
 class Class_10th:
     print("Hello Class")
-Class_10th_C = Class_10th()
-print(Class_10th_C)
+
+
+class_10th_C = Class_10th()
+print(class_10th_C)
+# The output gives string ' hello world '
 
 
 class Cars:
@@ -14,8 +17,11 @@ class Cars:
     engine_1 = "V8"
     engine_2 = "V9"
     engine_3 = "V10"
-Customer_1 = Cars()
-print(Customer_1.brand_1,Customer_1.colour_2,Customer_1.engine_1)
 
-Customer_2 = Cars()
-print(Customer_2.brand_2,Customer_2.colour_1,Customer_2.engine_2)
+
+customer_1 = Cars()
+print(customer_1.brand_1,customer_1.colour_2,customer_1.engine_1)
+# The output gives the string which specifies the Brand , colour and engine type
+customer_2 = Cars() 
+print(customer_2.brand_2,customer_2.colour_1,customer_2.engine_2)
+# The output gives the string which specifies Brand , colour and engine type
