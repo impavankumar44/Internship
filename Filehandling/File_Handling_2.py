@@ -1,7 +1,7 @@
 with open("C:\\Mywork\\Filehandling\\File_Handling_2Dup","r") as f:
    
     Context_2 = f.read()
-    print( Context_2 )
+    print( Context_2 ) #This is file handling.
 
 
 
